@@ -12,23 +12,27 @@
 <script lang="ts">
     export default {
         name: 'Person',
-        data(){
-            return {
-                name:'张三',
-                age:18,
-                tel:'145634'
+        //vue3在setup中没有维护this
+        setup(){
+            //console.log('@@',this) setup函数中的this是undefined, Vue3中已经开始弱化this了
+            //数据 原来是写在data中的, 此时的name age tel都不是响应式的数据
+            let name = '张三' //注意此时的name不是响应式的
+            let age = 18
+            let tel = '12345679'
+            //方法
+            function changeName() {
+                name = 'zhang-san' //注意: 这样修改name, 页面是没有变化的.
+                console.log(name) //name确实改了,但是name不是响应式的.
             }
-        },
-        methods:{
-            changeName() {
-                this.name = 'zhang-san'
-            },
-            changeAge() {
-                this.age += 1
-            },
-            showTel(){
-                alert(this.tel)
+            function changeAge() {
+                age += 1
+                console.log(age)
             }
+            function showTel() {
+                alert(tel)
+                console.log(tel)
+            }
+            return {name,age,changeName,changeAge,showTel}
         }
     }
 </script>
