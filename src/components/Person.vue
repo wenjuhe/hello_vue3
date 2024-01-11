@@ -33,6 +33,14 @@
                 console.log(tel)
             }
             return {name,age,changeName,changeAge,showTel}
+            // return function(){
+            //     return '哈哈'
+            // }
+            // return ()=>{
+            //     return '哈哈'
+            // }
+            //箭头函数 setup的返回值也可以是一个渲染函数
+            //return ()=> '哈哈'
         }
     }
 </script>
