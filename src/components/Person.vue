@@ -6,12 +6,30 @@
         <button @click="changeName">修改名字</button>
         <button @click="changeAge">修改年龄</button>
         <button @click="showTel">查看联系方式</button>
+        <hr>
+        <h2>测试1: {{a}}</h2>
+        <h2>测试2: {{c}}</h2>
+        <button @click="b">测试</button>
     </div>
 </template>
 
 <script lang="ts">
     export default {
         name: 'Person',
+        beforeCreate(){
+            console.log('beforeCreate')
+        },
+        data(){
+            return {
+                a:100,
+                c:this.name
+            }
+        },
+        methods: {
+            b(){
+                console.log('b')
+            }
+        },
         //vue3在setup中没有维护this
         setup(){
             //console.log('@@',this) setup函数中的this是undefined, Vue3中已经开始弱化this了

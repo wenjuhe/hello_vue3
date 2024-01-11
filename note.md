@@ -4,3 +4,6 @@ Vite 项目中, index.html 是项目的入口文件, 在项目最外层.
 Vue3 中是通过 createApp 函数创建一个应用实例
 
 ### OptionsAPI与CompositionAPI
+
+### setup与OptionsAPI
+data和methods可以同setup同时存在
