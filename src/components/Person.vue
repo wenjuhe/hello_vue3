@@ -6,60 +6,61 @@
         <button @click="changeName">修改名字</button>
         <button @click="changeAge">修改年龄</button>
         <button @click="showTel">查看联系方式</button>
-        <hr>
-        <h2>测试1: {{a}}</h2>
-        <h2>测试2: {{c}}</h2>
-        <button @click="b">测试</button>
     </div>
 </template>
 
-<script lang="ts">
+//配置组件名字
+<!-- <script lang="ts">
     export default {
-        name: 'Person',
-        beforeCreate(){
-            console.log('beforeCreate')
-        },
-        data(){
-            return {
-                a:100,
-                c:this.name
-            }
-        },
-        methods: {
-            b(){
-                console.log('b')
-            }
-        },
+        name: 'Person234',
         //vue3在setup中没有维护this
-        setup(){
-            //console.log('@@',this) setup函数中的this是undefined, Vue3中已经开始弱化this了
-            //数据 原来是写在data中的, 此时的name age tel都不是响应式的数据
-            let name = '张三' //注意此时的name不是响应式的
-            let age = 18
-            let tel = '12345679'
-            //方法
-            function changeName() {
-                name = 'zhang-san' //注意: 这样修改name, 页面是没有变化的.
-                console.log(name) //name确实改了,但是name不是响应式的.
-            }
-            function changeAge() {
-                age += 1
-                console.log(age)
-            }
-            function showTel() {
-                alert(tel)
-                console.log(tel)
-            }
-            return {name,age,changeName,changeAge,showTel}
-            // return function(){
-            //     return '哈哈'
-            // }
-            // return ()=>{
-            //     return '哈哈'
-            // }
-            //箭头函数 setup的返回值也可以是一个渲染函数
-            //return ()=> '哈哈'
-        }
+        // setup(){
+        //     //console.log('@@',this) setup函数中的this是undefined, Vue3中已经开始弱化this了
+        //     //数据 原来是写在data中的, 此时的name age tel都不是响应式的数据
+        //     let name = '张三' //注意此时的name不是响应式的
+        //     let age = 18
+        //     let tel = '12345679'
+        //     //方法
+        //     function changeName() {
+        //         name = 'zhang-san' //注意: 这样修改name, 页面是没有变化的.
+        //         console.log(name) //name确实改了,但是name不是响应式的.
+        //     }
+        //     function changeAge() {
+        //         age += 1
+        //         console.log(age)
+        //     }
+        //     function showTel() {
+        //         alert(tel)
+        //         console.log(tel)
+        //     }
+        //     return {name,age,changeName,changeAge,showTel}
+        //     // return function(){
+        //     //     return '哈哈'
+        //     // }
+        //     // return ()=>{
+        //     //     return '哈哈'
+        //     // }
+        //     //箭头函数 setup的返回值也可以是一个渲染函数
+        //     //return ()=> '哈哈'
+        // }
+    }
+</script> -->
+
+
+//配置组合式api
+<script lang="ts" setup name="Person1234">
+    let name = '张三'
+    let age = 18
+    let tel = '234'
+
+    function changeName() {
+        name = 'zhang-san'
+    }
+    function changeAge() {
+        age += 1
+    }
+    function showTel() {
+        alert(tel)
     }
 </script>
 

@@ -7,3 +7,7 @@ Vue3 中是通过 createApp 函数创建一个应用实例
 
 ### setup与OptionsAPI
 data和methods可以同setup同时存在
+
+### setup语法糖
+npm i vite-plugin-vue-setup-extend -D
+文件名 与 组件名
