@@ -3,6 +3,7 @@
         //插值语法
         <h2>姓名: {{name}}</h2>
         <h2>年龄: {{age}}</h2>
+        <h2>地址: {{address}}</h2>
         <button @click="changeName">修改名字</button>
         <button @click="changeAge">修改年龄</button>
         <button @click="showTel">查看联系方式</button>
@@ -48,16 +49,23 @@
 
 
 //配置组合式api
-<script lang="ts" setup name="Person1234">
-    let name = '张三'
-    let age = 18
+<script lang="ts" setup name="Person">
+    import {ref} from 'vue'
+    let name = ref('张三')
+    let age = ref(18)
     let tel = '234'
+    let address = '北京昌平区宏福苑'
+
+    console.log(1,name)
+    console.log(2,age)
+    console.log(3,tel)
+    console.log(4,address)
 
     function changeName() {
-        name = 'zhang-san'
+        name.value = 'zhang-san'
     }
     function changeAge() {
-        age += 1
+        age.value += 1
     }
     function showTel() {
         alert(tel)
