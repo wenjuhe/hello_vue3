@@ -23,3 +23,11 @@ npm i vite-plugin-vue-setup-extend -D
 1. 若需要一个基本类型的响应式数据, 必须使用 ref
 2. 若需要一个响应式对象, 层级不深, ref, reactive 都可以
 3. 若需要一个响应式对象, 且层级较深, 推荐使用 reactive
+   
+# watch
+作用: 监视数据的变化(和Vue2中的watch作用一致)
+特点: Vue3中的watch只能监视以下四种数据:
+1. ref定义的数据
+2. reactive定义的数据
+3. 函数返回一个值(getter函数)
+4. 一个包含上述内容的数组

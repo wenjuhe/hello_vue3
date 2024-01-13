@@ -2,12 +2,12 @@
 
 
 <template>
-  <person/>
+  <Person/>
 </template>
 
 
 <script lang="ts">
-  import Person from './components/Person3.vue'
+  import Person from './components/Person4.vue'
 
   export default {
     name: 'App', //组件名
