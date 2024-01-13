@@ -20,9 +20,9 @@
             <li v-for="g in games"  v-bind:key="g.id">{{ g.name}}</li>
         </ul>
         <button @click="changeFirstGame">修改第一个游戏的名字</button>
-        <hr>
+        <!-- <hr>
         <h2>测试: {{obj.a.b.c}}</h2>
-        <button @click="changeObj">测试</button>
+        <button @click="changeObj">测试</button> -->
     </div>
 </template>
 
@@ -89,34 +89,38 @@
 </script> -->
 
 <script lang="ts" setup name="person">
-    import {reactive} from 'vue'
+    //import {reactive} from 'vue'
+    import {ref,reactive} from 'vue'
     //数据
-    let car = reactive({brand:'奔驰',price:100})
-    let games = reactive([
+    let car = ref({brand:'奔驰',price:100})
+    let games = ref([
         {id:'01',name:'王者荣耀'},
         {id:'02',name:'蛋仔派对'},
         {id:'03',name:'QQ飞车'}
     ])
-    //深层次的
-    let obj = reactive({
-        a:{
-            b:{
-                c:666
-            }
-        }
-    })
+    let obj = reactive({x:999})
     console.log(car)
+    console.log(obj)
+    //深层次的
+    // let obj = reactive({
+    //     a:{
+    //         b:{
+    //             c:666
+    //         }
+    //     }
+    // })
+    // console.log(car)
     //方法
     function changePrice() {
-        car.price += 10
+        car.value.price += 10
     }
 
     function changeFirstGame() {
-        games[0].name = '穿越火线'
+        games.value[0].name = '穿越火线'
     }
-    function changeObj(){
-        obj.a.b.c = 999
-    }
+    // function changeObj(){
+    //     obj.a.b.c = 999
+    // }
 </script>
 
 
