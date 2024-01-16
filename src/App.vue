@@ -7,7 +7,7 @@
 
 
 <script lang="ts">
-  import Person from './components/Person4.vue'
+  import Person from './components/Person5.vue'
 
   export default {
     name: 'App', //组件名
